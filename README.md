@@ -2,7 +2,7 @@
 
 ## Bookkeeper Description (add more detail later)
 
-This project is a Bookkeeper API containing ___ Each book contains the title, author, description and genre.
+This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
 
 The program allows the user to add a book they have read ___ stored in their 'booklist.'
 
