@@ -34,7 +34,7 @@ Below is a description of all models available, along with the Class Diagram and
 The technologies used for this project are:
 - Intellij IDEA, running JDK 17
 - Spring Boot
-- H2 Server
+- SQL Server? 
 - Postman
 -------------
 
@@ -68,7 +68,6 @@ The book model contains filters and a sort that allow the user to narrow their s
 - Spring Web
 - SpringBoot Devtools
 - Spring Data JPA
-- H2 Database
 --------
 
 ## Collaborators
