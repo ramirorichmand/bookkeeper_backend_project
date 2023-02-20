@@ -64,7 +64,7 @@ Each model - User, Book, Review and Status - have REST controllers that provide 
 The book model contains filters and a sort that allow the user to narrow their search.
 
 ---------
-## Dependancies
+## Dependencies
 - Spring Web
 - SpringBoot Devtools
 - Spring Data JPA
