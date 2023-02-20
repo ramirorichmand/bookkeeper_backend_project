@@ -1,4 +1,4 @@
-# bookkeeper_backend_project
+# Bookkeeper Backend Project
 
 ## Bookkeeper Description (add more detail later)
 
