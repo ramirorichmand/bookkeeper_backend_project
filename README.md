@@ -20,7 +20,12 @@ Below is a description of all models available, along with the Class Diagram and
 
 ### Class Diagram
 
-### Entity Relatiobship Diagram
+<img src ="./Backend Class Diagram.png" alt="class diagram" width="80%"/>
+
+
+### Entity Relationship Diagram
+
+<img src="./Backend Entity Relationship Diagram.png" alt="entity relationship diagram" width="80%"/>
 
 ---------
 
