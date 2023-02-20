@@ -1,16 +1,16 @@
 # bookkeeper_backend_project
 
-## Bookkeeper Description
+## Bookkeeper Description (add more detail later)
 
-This project is a Bookkeeper API containing ____
+This project is a Bookkeeper API containing ___ Each book contains the title, author, description and genre.
 
-The program allows the user to add a book they have read ____
+The program allows the user to add a book they have read ___ stored in their 'booklist.'
 
-The user is able to filter books based on _____
+The user is able to filter books based on author, genre and rating.
 
 Below is a description of all models available, along with the Class Diagram and Entity Relationship Diagram.
 
-### Users
+### Users:
 
 ### Books: 
 
@@ -40,7 +40,7 @@ The technologies used for this project are:
 
 ## How to use the API
 
-####
+#### To access the program, use [local host] - add info later
 
 Each model - User, Book, Review and Status - have REST controllers that provide basic CRUD functionality, specifically Index, Show, Create, Update and Delete routes. The User and Book models also have additional functionality, described below: 
 
