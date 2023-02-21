@@ -14,9 +14,7 @@ Below is a description of all models available, along with the Class Diagram and
 
 ### Books: 
 
-### Reviews:
-
-### Status:
+### OwnedBook:
 
 ### Class Diagram (update later)
 
@@ -42,7 +40,7 @@ The technologies used for this project are:
 
 #### To access the program, use [local host] - add info later
 
-Each model - User, Book, Review and Status - have REST controllers that provide basic CRUD functionality, specifically Index, Show, Create, Update and Delete routes. The User and Book models also have additional functionality, described below: 
+Each model - User, Book and OwnedBook - have REST controllers that provide basic CRUD functionality, specifically Index, Show, Create, Update and Delete routes. The User and Book models also have additional functionality, described below: 
 
 - INDEX: 
   - GET [local host] returns all books in JSON format and can be accessed via web browser
