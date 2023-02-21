@@ -8,6 +8,8 @@ import java.util.List;
 @Table(name = "status")
 public class Status {
 
+    // fix line 12
+    public int getUser;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -81,5 +83,13 @@ public class Status {
 
     public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
+    }
+
+    //
+    public Object getBook() {
+        return null;
+    }
+
+    public void setBook(Object book) {
     }
 }
