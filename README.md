@@ -18,12 +18,12 @@ Below is a description of all models available, along with the Class Diagram and
 
 ### Status:
 
-### Class Diagram
+### Class Diagram (update later)
 
 <img src ="./Backend Class Diagram.png" alt="class diagram" width="80%"/>
 
 
-### Entity Relationship Diagram
+### Entity Relationship Diagram (update later)
 
 <img src="./Entity Relationship Diagram Backend.png" alt="entity relationship diagram" width="80%"/>
 
@@ -38,7 +38,7 @@ The technologies used for this project are:
 - Postman
 -------------
 
-## How to use the API
+## How to use the API (Update later)
 
 #### To access the program, use [local host] - add info later
 
@@ -59,7 +59,7 @@ Each model - User, Book, Review and Status - have REST controllers that provide 
 - DELETE:
   - DELETE [local host] updates book with unique id = {id}. This must be done in Postman. If delete request is successful, Http status 202 - no content - is returned
   
-### Filters and Sort
+### Filters and Sort (Update later)
   
 The book model contains filters and a sort that allow the user to narrow their search.
 
