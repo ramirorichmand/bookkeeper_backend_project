@@ -2,11 +2,12 @@ package com.BookkeeperBackendProject.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "status")
-public class Status {
+public class OwnedBook {
 
     // fix line 12
     public int getUser;
@@ -26,15 +27,15 @@ public class Status {
     @ManyToOne
     private List<Book> bookList;
 
-    public Status(int user_id, int book_id, String status, List<User> userList, List<Book> bookList) {
+    public OwnedBook(int user_id, int book_id, String status) {
         this.user_id = user_id;
         this.book_id = book_id;
         this.status = status;
-        this.userList = userList;
-        this.bookList = bookList;
+        this.userList = new ArrayList<>();
+        this.bookList = new ArrayList<>();
     }
 
-    public Status() {
+    public OwnedBook() {
     }
 
     public long getId() {

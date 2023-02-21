@@ -1,7 +1,9 @@
 package com.BookkeeperBackendProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,12 +23,14 @@ public class User {
     private String email;
 
     @OneToMany
-    private Status statusEntry;
+    @JsonIgnoreProperties("user")
+    private List<OwnedBook> ownedBooks;
 
-    public User(String fullName, String email, Status statusEntry) {
+
+    public User(String fullName, String email) {
         this.fullName = fullName;
         this.email = email;
-        this.statusEntry = statusEntry;
+        this.ownedBooks = new ArrayList<>();
     }
 
     public User() {
@@ -58,14 +62,13 @@ public class User {
         this.email = email;
     }
 
-    public Status getStatusEntry() {
-        return statusEntry;
+    public List<Book> getBookList() {
+        return bookList;
     }
 
-    public void setStatusEntry(Status statusEntry) {
-        this.statusEntry = statusEntry;
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
-
 
     // add methods
 }

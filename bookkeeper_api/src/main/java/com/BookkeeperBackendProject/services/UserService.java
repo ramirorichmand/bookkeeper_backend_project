@@ -36,19 +36,20 @@ public class UserService {
         }
     }
 
-    public void deleteUser(Long id){
-        userRepository.deleteById(id);
-    }
-
-    public User getUserByEmail(String email){
-        return userRepository.findByEmail(email);
-
-    }
 
     public User addUser(User user){
         userRepository.save(user);
         User savedUser = userRepository.save(user);
         return savedUser;
+    }
+    public void deleteUser(Long id){
+        userRepository.deleteById(id);
+    }
+
+
+    //repo methods
+    public User getUserByEmail(String email){
+        return userRepository.findByEmail(email);
     }
 
 

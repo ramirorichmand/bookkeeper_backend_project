@@ -2,6 +2,9 @@ package com.BookkeeperBackendProject.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "books")
 public class Book {
@@ -21,14 +24,14 @@ public class Book {
     private String genre;
 
     @OneToMany
-    private Status statusEntry;
+    private List<OwnedBook> ownedBook;
 
-    public Book(String title, String author, String description, String genre, Status statusEntry) {
+    public Book(String title, String author, String description, String genre) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.genre = genre;
-        this.statusEntry = statusEntry;
+        this.ownedBook= new ArrayList<>();
     }
 
     public Book() {
@@ -74,12 +77,12 @@ public class Book {
         this.genre = genre;
     }
 
-    public Status getStatusEntry() {
-        return statusEntry;
+    public List<OwnedBook> getOwnedBook() {
+        return ownedBook;
     }
 
-    public void setStatusEntry(Status statusEntry) {
-        this.statusEntry = statusEntry;
+    public void setOwnedBook(List<OwnedBook> ownedBook) {
+        this.ownedBook = ownedBook;
     }
 
     // add method signs
