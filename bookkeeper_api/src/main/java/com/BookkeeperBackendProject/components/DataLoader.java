@@ -1,6 +1,7 @@
 package com.BookkeeperBackendProject.components;
 
 import com.BookkeeperBackendProject.models.Book;
+import com.BookkeeperBackendProject.models.OwnedBook;
 import com.BookkeeperBackendProject.models.User;
 import com.BookkeeperBackendProject.repositories.BookRepository;
 import com.BookkeeperBackendProject.repositories.StatusRepository;
@@ -9,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -55,6 +59,26 @@ public class DataLoader implements ApplicationRunner {
         Book book3 = new Book("The Catcher in the Rye", "J.D. Salinger", "A novel following a teenage " +
                 "boy named Holden Caulfield as he navigates through adolescence and society's expectations.", "Coming-of-age fiction");
 
+        // add in above
+
+        // create and save test statuses
+        OwnedBook ownedBook1 = new OwnedBook(1, 1, "Reading" );
+        OwnedBook ownedBook2 = new OwnedBook(1, 1, "Reading" );
+        OwnedBook ownedBook3 = new OwnedBook(1, 1, "Reading" );
+        statusRepository.saveAll(Arrays.asList(ownedBook1, ownedBook2, ownedBook3));
+
+        //print all users, books and statuses for testing
+        List<User> users = userRepository.findAll();
+        System.out.println("Loaded users:");
+        users.forEach(System.out::println);
+
+        List<Book> books = bookRepository.findAll();
+        System.out.println("Loaded books:");
+        books.forEach(System.out::println);
+
+        List<OwnedBook> statuses = statusRepository.findAll();
+        System.out.println("Loaded statuses:");
+        statuses.forEach(System.out::println);
 
     }
 }
