@@ -62,11 +62,8 @@ public class OwnedBook {
         this.book = book;
     }
 
-    //
-    public Object getBook() {
-        return null;
+    public Book getBook() {
+        return this.book;
     }
 
-    public void setBook(Object book) {
-    }
 }

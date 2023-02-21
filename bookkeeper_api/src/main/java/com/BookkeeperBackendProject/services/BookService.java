@@ -20,7 +20,7 @@ public class BookService {
 
     public Book getBookById(long id) {
         Optional<Book> book = bookRepository.findById(id);
-        return book.orElse(null);
+        return book.orElse(null); // ask about this
     }
 
     public Book updateBook(Book book) {
