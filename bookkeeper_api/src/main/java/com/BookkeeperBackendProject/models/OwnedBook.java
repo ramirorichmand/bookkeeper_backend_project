@@ -6,33 +6,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "status")
+@Table(name = "ownedBooks")
 public class OwnedBook {
 
     // fix line 12
-    public int getUser;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long id;
     @Column
-    private int user_id;
-    @Column
-    private int book_id;
-    @Column
     private String status;
 
     @ManyToOne
-    private List<User> userList;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
     @ManyToOne
-    private List<Book> bookList;
+    @JoinColumn(name = "book_id", nullable = false)
+    private Book book;
 
-    public OwnedBook(int user_id, int book_id, String status) {
-        this.user_id = user_id;
-        this.book_id = book_id;
+    public OwnedBook(String status, User user, Book book) {
         this.status = status;
-        this.userList = new ArrayList<>();
-        this.bookList = new ArrayList<>();
+        this.user = user;
+        this.book = book;
     }
 
     public OwnedBook() {
@@ -46,21 +41,6 @@ public class OwnedBook {
         this.id = id;
     }
 
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public int getBook_id() {
-        return book_id;
-    }
-
-    public void setBook_id(int book_id) {
-        this.book_id = book_id;
-    }
 
     public String getStatus() {
         return status;
@@ -70,20 +50,16 @@ public class OwnedBook {
         this.status = status;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     //

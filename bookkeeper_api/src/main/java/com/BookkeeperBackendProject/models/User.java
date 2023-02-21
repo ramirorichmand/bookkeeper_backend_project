@@ -18,11 +18,11 @@ public class User {
     @Column
     private String fullName;
 
-
     @Column
     private String email;
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "user")
     @JsonIgnoreProperties("user")
     private List<OwnedBook> ownedBooks;
 
@@ -62,13 +62,6 @@ public class User {
         this.email = email;
     }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
 
     // add methods
 }

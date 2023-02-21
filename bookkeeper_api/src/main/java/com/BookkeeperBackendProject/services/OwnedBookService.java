@@ -1,23 +1,23 @@
 package com.BookkeeperBackendProject.services;
 
 import com.BookkeeperBackendProject.models.OwnedBook;
-import com.BookkeeperBackendProject.repositories.StatusRepository;
+import com.BookkeeperBackendProject.repositories.OwnedBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StatusService {
+public class OwnedBookService {
 
     @Autowired
-    private StatusRepository statusRepository;
+    private OwnedBookRepository ownedBookRepository;
 
     // The getStatusById() method retrieves a single status by its ID using the findById() method of the StatusRepository.
     public OwnedBook getStatusById(Long id){
-        return statusRepository.findById(id).orElse(null);
+        return ownedBookRepository.findById(id).orElse(null);
     }
 
     public OwnedBook addStatus(OwnedBook ownedBook){
-        return statusRepository.save(ownedBook);
+        return ownedBookRepository.save(ownedBook);
     }
 
     public OwnedBook updateStatus(Long id, OwnedBook ownedBook){
@@ -25,8 +25,8 @@ public class StatusService {
         if (existingOwnedBook != null) {
             existingOwnedBook.setStatus(ownedBook.getStatus());
             existingOwnedBook.setBook(ownedBook.getBook());
-            existingOwnedBook.setUser_id(ownedBook.getUser);
-            return statusRepository.save(existingOwnedBook);
+            existingOwnedBook.setUser(ownedBook.getUser());
+            return ownedBookRepository.save(existingOwnedBook);
         } else {
             return null;
         }
@@ -35,7 +35,7 @@ public class StatusService {
     public boolean deleteStatus(Long id){
         OwnedBook existingOwnedBook = getStatusById(id);
         if (existingOwnedBook != null) {
-            statusRepository.delete(existingOwnedBook);
+            ownedBookRepository.delete(existingOwnedBook);
             return true;
         } else {
             return false;

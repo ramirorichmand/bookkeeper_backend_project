@@ -4,7 +4,7 @@ import com.BookkeeperBackendProject.models.Book;
 import com.BookkeeperBackendProject.models.OwnedBook;
 import com.BookkeeperBackendProject.models.User;
 import com.BookkeeperBackendProject.repositories.BookRepository;
-import com.BookkeeperBackendProject.repositories.StatusRepository;
+import com.BookkeeperBackendProject.repositories.OwnedBookRepository;
 import com.BookkeeperBackendProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -24,7 +24,7 @@ public class DataLoader implements ApplicationRunner {
     UserRepository userRepository;
 
     @Autowired
-    StatusRepository statusRepository;
+    OwnedBookRepository ownedBookRepository;
 
     public DataLoader() {
     }
@@ -39,7 +39,7 @@ public class DataLoader implements ApplicationRunner {
         User user2 = new User("Leah Simon", "leah@bnta.com");
         userRepository.save(user2);
 
-        User user3 = new User("Ramiro Richmond", "ramiro@bnta.com");
+        User user3 = new User("Ramiro Richmand", "ramiro@bnta.com");
         userRepository.save(user3);
 
         User user4 = new User("John Smith", "john@bnta.com");
@@ -116,10 +116,10 @@ public class DataLoader implements ApplicationRunner {
         // add in above
 
         // create and save test statuses
-        OwnedBook ownedBook1 = new OwnedBook(1, 1, "Currently reading" );
-        OwnedBook ownedBook2 = new OwnedBook(2, 2, "To-read" );
-        OwnedBook ownedBook3 = new OwnedBook(3, 3, "Read" );
-        statusRepository.saveAll(Arrays.asList(ownedBook1, ownedBook2, ownedBook3));
+        OwnedBook ownedBook1 = new OwnedBook("Currently reading", user1, book1);
+        OwnedBook ownedBook2 = new OwnedBook("To-read", user2, book2);
+        OwnedBook ownedBook3 = new OwnedBook("Read", user3, book3);
+        ownedBookRepository.saveAll(Arrays.asList(ownedBook1, ownedBook2, ownedBook3));
 
         //print all users, books and statuses for testing
         List<User> users = userRepository.findAll();
@@ -130,7 +130,7 @@ public class DataLoader implements ApplicationRunner {
         System.out.println("Loaded books:");
         books.forEach(System.out::println);
 
-        List<OwnedBook> statuses = statusRepository.findAll();
+        List<OwnedBook> statuses = ownedBookRepository.findAll();
         System.out.println("Loaded statuses:");
         statuses.forEach(System.out::println);
 

@@ -51,9 +51,9 @@ public class BookService {
         List<Book> genres = bookRepository.findByGenre(genre);
         return genres;
     }
-    public List<Book> findByStatus(OwnedBook ownedBook){
-        List<Book> statuses = bookRepository.findByStatus(ownedBook);
-        return statuses;
+    public List<Book> findByOwnedBooksStatusAndUserId(String status, long id){
+        List<Book> foundBooks = bookRepository.findByOwnedBooksStatusAndOwnedBooksUserId(status, id);
+        return foundBooks;
     }
 }
 

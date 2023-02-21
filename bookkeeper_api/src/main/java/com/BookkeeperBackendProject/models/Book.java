@@ -1,5 +1,6 @@
 package com.BookkeeperBackendProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -13,7 +14,6 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long id;
-
     @Column
     private String title;
     @Column
@@ -23,15 +23,16 @@ public class Book {
     @Column
     private String genre;
 
-    @OneToMany
-    private List<OwnedBook> ownedBook;
+    @OneToMany(mappedBy = "book")
+    @JsonIgnoreProperties(value = "book")
+    private List<OwnedBook> ownedBooks;
 
     public Book(String title, String author, String description, String genre) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.genre = genre;
-        this.ownedBook= new ArrayList<>();
+        this.ownedBooks= new ArrayList<>();
     }
 
     public Book() {
@@ -78,11 +79,11 @@ public class Book {
     }
 
     public List<OwnedBook> getOwnedBook() {
-        return ownedBook;
+        return ownedBooks;
     }
 
     public void setOwnedBook(List<OwnedBook> ownedBook) {
-        this.ownedBook = ownedBook;
+        this.ownedBooks = ownedBook;
     }
 
     // add method signs
