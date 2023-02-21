@@ -14,10 +14,8 @@ public class User {
     private long id;
 
     @Column
-    private String firstName;
+    private String fullName;
 
-    @Column
-    private String lastName;
 
     @Column
     private String email;
@@ -25,15 +23,16 @@ public class User {
     @OneToMany
     private Status statusEntry;
 
-    public User(String firstName, String lastName, String email, Status statusEntry) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String fullName, String email, Status statusEntry) {
+        this.fullName = fullName;
         this.email = email;
         this.statusEntry = statusEntry;
     }
 
     public User() {
     }
+
+
 
     public long getId() {
         return id;
@@ -43,20 +42,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {

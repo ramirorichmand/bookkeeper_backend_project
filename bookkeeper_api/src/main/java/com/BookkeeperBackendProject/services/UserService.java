@@ -15,20 +15,20 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getAllUsers(){
-        return user.orElse(null);
+        return userRepository.findAll();
     }
 
     public User getUserById(Long id){
-        Optionl<User>user = userRepository.findById(id);
+        Optional<User>user = userRepository.findById(id);
         return user.orElse(null);
 
     }
 
-    public User updateUser(int id, User user) {
+    public User updateUser(Long id, User user) {
         Optional<User> optionalUser = userRepository.findById(id);
         if (optionalUser.isPresent()) {
             User existingUser = optionalUser.get();
-            existingUser.setName(user.getName());
+            existingUser.setFullName(user.getFullName());
             existingUser.setEmail(user.getEmail());
             return userRepository.save(existingUser);
         } else {
@@ -44,6 +44,18 @@ public class UserService {
         return userRepository.findByEmail(email);
 
     }
+
+    public User addUser(User user){
+        userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        return savedUser;
+    }
+
+
+
+
+
+
 
 
 }
