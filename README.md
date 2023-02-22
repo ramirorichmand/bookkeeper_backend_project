@@ -4,17 +4,20 @@
 
 This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
 
-The program allows the user to add a book they have read ___ stored in their 'booklist.'
+The program allows the user to have a book stored in their 'booklist' as well as allowing them to categorise them into "Currently reading," "To-read" and "Read" to add further personalisation. 
 
 The user is able to filter books based on author, genre and rating.
 
 Below is a description of all models available, along with the Class Diagram and Entity Relationship Diagram.
 
 ### Users:
+A user object contains an id, full name, an email address and their own booklist. 
 
-### Books: 
+### Books:
+Books contains an id, title, author, description and genre
 
 ### OwnedBook:
+OwnedBook contains the status, user and book
 
 ### Class Diagram (update later)
 
@@ -43,10 +46,11 @@ The technologies used for this project are:
 Each model - User, Book and OwnedBook - have REST controllers that provide basic CRUD functionality, specifically Index, Show, Create, Update and Delete routes. The User and Book models also have additional functionality, described below: 
 
 - INDEX: 
-  - GET [local host] returns all books in JSON format and can be accessed via web browser
+  - 'GET http://localhost:8080/books' returns all books in JSON format and can be accessed via web browser
+  - This method is available for all other models
 
 - SHOW:
-  - GET [local host] returns books with unique id = {id} and can be accessed via web browser
+  - 'GET http://localhost:8080/books/{bookId}' returns books with unique id = {id} and can be accessed via web browser
 
 - CREATE:
   - POST [local host] creates a book with a unique id, and returns the created book. Attributes of this new book must be sent within the request body in Postman
