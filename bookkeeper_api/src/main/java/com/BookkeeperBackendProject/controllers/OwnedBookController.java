@@ -7,20 +7,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping("/ownedBooks")
 public class OwnedBookController {
 
     @Autowired
     private OwnedBookService ownedBookService;
 
+    
     @GetMapping(value = "/{id}")
     public ResponseEntity<OwnedBook> getStatusById(@PathVariable Long id){
         OwnedBook ownedBook = ownedBookService.getStatusById(id);
         if (ownedBook != null) {
             return new ResponseEntity<>(ownedBook, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 

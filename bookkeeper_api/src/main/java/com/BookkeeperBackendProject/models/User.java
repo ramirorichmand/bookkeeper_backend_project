@@ -62,6 +62,11 @@ public class User {
         this.email = email;
     }
 
+    public List<OwnedBook> getOwnedBooks() {
+        return ownedBooks;
+    }
 
-    // add methods
+    public void setOwnedBooks(List<OwnedBook> ownedBooks) {
+        this.ownedBooks = ownedBooks;
+    }
 }

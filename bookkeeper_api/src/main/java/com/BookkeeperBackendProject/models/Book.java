@@ -24,7 +24,7 @@ public class Book {
     private String genre;
 
     @OneToMany(mappedBy = "book")
-    @JsonIgnoreProperties(value = "book")
+    @JsonIgnoreProperties("book")
     private List<OwnedBook> ownedBooks;
 
     public Book(String title, String author, String description, String genre) {
@@ -78,13 +78,13 @@ public class Book {
         this.genre = genre;
     }
 
-    public List<OwnedBook> getOwnedBook() {
+    public List<OwnedBook> getOwnedBooks() {
         return ownedBooks;
     }
 
-    public void setOwnedBook(List<OwnedBook> ownedBook) {
-        this.ownedBooks = ownedBook;
+    public void setOwnedBooks(List<OwnedBook> ownedBooks) {
+        this.ownedBooks = ownedBooks;
     }
 
-    // add method signs
+
 }

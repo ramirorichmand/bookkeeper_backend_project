@@ -1,5 +1,6 @@
 package com.BookkeeperBackendProject.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -19,9 +20,11 @@ public class OwnedBook {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties("ownedBooks")
     private User user;
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
+    @JsonIgnoreProperties("ownedBooks")
     private Book book;
 
     public OwnedBook(String status, User user, Book book) {
