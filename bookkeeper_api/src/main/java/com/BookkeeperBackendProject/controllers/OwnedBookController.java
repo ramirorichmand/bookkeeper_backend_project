@@ -18,6 +18,10 @@ public class OwnedBookController {
     private OwnedBookService ownedBookService;
 
     //get all owned books - method
+//    @GetMapping(value = "ownedBooks")
+//    public ResponseEntity<OwnedBook> getAllOwnedBooks(){
+//        OwnedBook ownedBook = ownedBookService.g
+//    }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<OwnedBook> getStatusById(@PathVariable Long id){
