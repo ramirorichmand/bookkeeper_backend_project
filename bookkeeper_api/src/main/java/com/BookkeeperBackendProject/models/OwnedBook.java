@@ -16,7 +16,10 @@ public class OwnedBook {
     @Column
     private long id;
     @Column
-    private String status;
+    private Enum<StatusEnum> status;
+
+    @Column
+    private String review;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -27,7 +30,7 @@ public class OwnedBook {
     @JsonIgnoreProperties("ownedBooks")
     private Book book;
 
-    public OwnedBook(String status, User user, Book book) {
+    public OwnedBook(Enum<StatusEnum> status, User user, Book book) {
         this.status = status;
         this.user = user;
         this.book = book;
@@ -45,11 +48,11 @@ public class OwnedBook {
     }
 
 
-    public String getStatus() {
+    public Enum<StatusEnum> getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Enum<StatusEnum> status) {
         this.status = status;
     }
 
@@ -69,4 +72,11 @@ public class OwnedBook {
         return this.book;
     }
 
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
 }

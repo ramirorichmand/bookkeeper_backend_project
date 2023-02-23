@@ -2,6 +2,7 @@ package com.BookkeeperBackendProject.components;
 
 import com.BookkeeperBackendProject.models.Book;
 import com.BookkeeperBackendProject.models.OwnedBook;
+import com.BookkeeperBackendProject.models.StatusEnum;
 import com.BookkeeperBackendProject.models.User;
 import com.BookkeeperBackendProject.repositories.BookRepository;
 import com.BookkeeperBackendProject.repositories.OwnedBookRepository;
@@ -113,12 +114,11 @@ public class DataLoader implements ApplicationRunner {
         bookRepository.saveAll(Arrays.asList(book1, book2, book3, book4, book5, book6, book7, book8, book9, book10,
                 book11, book12, book13, book14, book15, book16, book17, book18, book19, book20));
 
-        // add in above
 
         // create and save test statuses
-        OwnedBook ownedBook1 = new OwnedBook("Currently reading", user1, book1);
-        OwnedBook ownedBook2 = new OwnedBook("To-read", user2, book2);
-        OwnedBook ownedBook3 = new OwnedBook("Read", user3, book3);
+        OwnedBook ownedBook1 = new OwnedBook(StatusEnum.READING, user1, book1);
+        OwnedBook ownedBook2 = new OwnedBook(StatusEnum.TO_READ, user2, book2);
+        OwnedBook ownedBook3 = new OwnedBook(StatusEnum.READ, user3, book3);
         ownedBookRepository.saveAll(Arrays.asList(ownedBook1, ownedBook2, ownedBook3));
 
         //print all users, books and statuses for testing

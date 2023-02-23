@@ -1,6 +1,8 @@
 package com.BookkeeperBackendProject.services;
 
 import com.BookkeeperBackendProject.models.OwnedBook;
+import com.BookkeeperBackendProject.models.ReviewInputDTO;
+import com.BookkeeperBackendProject.models.StatusEnum;
 import com.BookkeeperBackendProject.repositories.OwnedBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,16 @@ public class OwnedBookService {
             return ownedBookRepository.save(existingOwnedBook);
         } else {
             return null;
+        }
+    }
+
+    public OwnedBook updateReview(ReviewInputDTO reviewInputDTO, OwnedBook ownedBook) throws Exception {
+        OwnedBook existingOwnedBook = getStatusById(ownedBook.getId());
+        if (existingOwnedBook.getStatus() == StatusEnum.READ){
+            existingOwnedBook.setReview(reviewInputDTO.getReview());
+            return ownedBookRepository.save(existingOwnedBook);
+        } else {
+            throw new Exception("Read the book first to leave a review!");
         }
     }
 

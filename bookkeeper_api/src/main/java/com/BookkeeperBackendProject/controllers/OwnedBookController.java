@@ -1,6 +1,7 @@
 package com.BookkeeperBackendProject.controllers;
 
 import com.BookkeeperBackendProject.models.OwnedBook;
+import com.BookkeeperBackendProject.models.ReviewInputDTO;
 import com.BookkeeperBackendProject.services.OwnedBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ public class OwnedBookController {
     @Autowired
     private OwnedBookService ownedBookService;
 
-    
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<OwnedBook> getStatusById(@PathVariable Long id){
         OwnedBook ownedBook = ownedBookService.getStatusById(id);
@@ -46,6 +47,20 @@ public class OwnedBookController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
+    }
+
+    @PatchMapping(value = "/{id}/reviews")
+    public ResponseEntity<OwnedBook> updateReview(@PathVariable Long id, @RequestBody ReviewInputDTO reviewInputDTO) throws Exception {
+        OwnedBook ownedBook = new OwnedBook();
+        ownedBook.setId(id);
+        ownedBook.setReview(reviewInputDTO.getReview());
+
+        ownedBook = ownedBookService.updateReview(reviewInputDTO, ownedBook);
+        if (ownedBook != null){
+            return new ResponseEntity<>(ownedBook, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("/{id}")
