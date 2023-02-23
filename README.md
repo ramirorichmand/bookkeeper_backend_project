@@ -39,7 +39,7 @@ The technologies used for this project are:
 - Postman
 -------------
 
-## How to use the API (Update later)
+## How to use the API 
 
 ### RESTful route endpoints
 
