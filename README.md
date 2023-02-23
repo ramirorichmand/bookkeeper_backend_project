@@ -41,6 +41,8 @@ The technologies used for this project are:
 
 ## How to use the API (Update later)
 
+### RESTful route endpoints
+
 #### To access the program, use `https://localhost:{port}/{endpoint}` - the default port is 8080
 
 Each model - User, Book and OwnedBook - have REST controllers that provide basic CRUD functionality, specifically Index, Show, Create, Update and Delete routes. The User and Book models also have additional functionality, described below: 
