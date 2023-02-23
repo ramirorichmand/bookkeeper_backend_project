@@ -21,6 +21,9 @@ public class OwnedBook {
     @Column
     private String review;
 
+    @Column
+    private int rating;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnoreProperties("ownedBooks")
@@ -30,8 +33,9 @@ public class OwnedBook {
     @JsonIgnoreProperties("ownedBooks")
     private Book book;
 
-    public OwnedBook(Enum<StatusEnum> status, User user, Book book) {
+    public OwnedBook(Enum<StatusEnum> status, int rating, User user, Book book) {
         this.status = status;
+        this.rating = rating;
         this.user = user;
         this.book = book;
     }
@@ -78,5 +82,13 @@ public class OwnedBook {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

@@ -17,6 +17,7 @@ public class OwnedBookController {
     @Autowired
     private OwnedBookService ownedBookService;
 
+    //get all owned books - method
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<OwnedBook> getStatusById(@PathVariable Long id){
@@ -28,8 +29,10 @@ public class OwnedBookController {
         }
     }
 
-    @PostMapping(value = "/{id}")
-    public ResponseEntity<OwnedBook> updateStatus(@RequestBody OwnedBook ownedBook){
+    //create owned book - method
+
+    @PostMapping
+    public ResponseEntity<OwnedBook> createStatus(@RequestBody OwnedBook ownedBook){
         ownedBook = ownedBookService.addStatus(ownedBook);
         if (ownedBook != null) {
             return new ResponseEntity<>(ownedBook, HttpStatus.CREATED);

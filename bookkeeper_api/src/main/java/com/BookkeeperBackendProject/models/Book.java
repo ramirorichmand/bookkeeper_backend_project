@@ -23,7 +23,7 @@ public class Book {
     @Column
     private String genre;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", orphanRemoval = true)
     @JsonIgnoreProperties("book")
     private List<OwnedBook> ownedBooks;
 

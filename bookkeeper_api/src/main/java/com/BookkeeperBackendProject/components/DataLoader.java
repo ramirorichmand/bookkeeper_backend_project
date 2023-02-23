@@ -116,9 +116,9 @@ public class DataLoader implements ApplicationRunner {
 
 
         // create and save test statuses
-        OwnedBook ownedBook1 = new OwnedBook(StatusEnum.READING, user1, book1);
-        OwnedBook ownedBook2 = new OwnedBook(StatusEnum.TO_READ, user2, book2);
-        OwnedBook ownedBook3 = new OwnedBook(StatusEnum.READ, user3, book3);
+        OwnedBook ownedBook1 = new OwnedBook(StatusEnum.READING,4, user1, book1);
+        OwnedBook ownedBook2 = new OwnedBook(StatusEnum.TO_READ, 5, user2, book2);
+        OwnedBook ownedBook3 = new OwnedBook(StatusEnum.READ, 1, user3, book3);
         ownedBookRepository.saveAll(Arrays.asList(ownedBook1, ownedBook2, ownedBook3));
 
         //print all users, books and statuses for testing

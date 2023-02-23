@@ -22,7 +22,7 @@ public class User {
     private String email;
 
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", orphanRemoval = true)
     @JsonIgnoreProperties("user")
     private List<OwnedBook> ownedBooks;
 

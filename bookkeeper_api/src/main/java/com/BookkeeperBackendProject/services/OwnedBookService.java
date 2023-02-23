@@ -40,6 +40,7 @@ public class OwnedBookService {
         OwnedBook existingOwnedBook = getStatusById(ownedBook.getId());
         if (existingOwnedBook.getStatus() == StatusEnum.READ){
             existingOwnedBook.setReview(reviewInputDTO.getReview());
+            existingOwnedBook.setRating(reviewInputDTO.getRating());
             return ownedBookRepository.save(existingOwnedBook);
         } else {
             throw new Exception("Read the book first to leave a review!");

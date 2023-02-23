@@ -51,7 +51,7 @@ public class BookService {
         List<Book> genres = bookRepository.findByGenre(genre);
         return genres;
     }
-    public List<Book> findByOwnedBooksStatusAndUserId(String status, long id){
+    public List<Book> findByOwnedBooksStatusAndOwnedBookUserId(String status, long id){
         List<Book> foundBooks = bookRepository.findByOwnedBooksStatusAndOwnedBooksUserId(status, id);
         return foundBooks;
     }
