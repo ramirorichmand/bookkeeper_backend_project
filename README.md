@@ -1,6 +1,6 @@
 # Bookkeeper Backend Project
 
-## Bookkeeper Description (add more detail later)
+## Description
 
 This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
 
