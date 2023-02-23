@@ -1,6 +1,6 @@
 # Bookkeeper Backend Project
 
-## Bookkeeper Description (add more detail later)
+## Description 
 
 This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
 
@@ -34,7 +34,7 @@ Below is a description of all models available, along with the Class Diagram and
 The technologies used for this project are:
 - Intellij IDEA, running JDK 17
 - Spring Boot
-- SQL Server? 
+- PostgreSQL
 - Postman
 -------------
 
