@@ -78,8 +78,8 @@ The book model contains filters and a sort that allow the user to narrow their s
 --------
 
 ## Collaborators
-- Aya (Github: [aya-rh](https://github.com/aya-rh))
-- Leah (Github: [nsleeah](https://github.com/nsleeah))
-- Ramiro (Github: [ramirorichmand](https://github.com/ramirorichmand))
+- Aya Hezam (Github: [aya-rh](https://github.com/aya-rh))
+- Leah Simon (Github: [nsleeah](https://github.com/nsleeah))
+- Ramiro Richmand (Github: [ramirorichmand](https://github.com/ramirorichmand))
 
 
