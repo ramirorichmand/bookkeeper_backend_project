@@ -4,7 +4,7 @@
 
 This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
 
-The program allows the user to have a book stored in their 'booklist' as well as allowing them to categorise them into "Currently reading," "To-read" and "Read" to add further personalisation.
+The program allows the user to have a book stored in their 'booklist' as well as allowing them to categorise them into "Reading," "Read" and "To_Read" to add further personalisation.
 
 The user is able to filter books based on author, genre and rating.
 
