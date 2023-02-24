@@ -66,7 +66,7 @@ Each model - User, Book and OwnedBook - have REST controllers that provide basic
   - `DELETE http://localhost:8080/books/{bookId}` deletes book with unique id = {id}. 
   - This must be done in Postman. If delete request is successful, Http status 202 - no content - is returned.
   
-### Filters and Sort (Update later)
+### Filters and Sort
   
 The book model contains filters and a sort that allow the user to narrow their search. Filters can be applied based on author, genre and rating. Books can also be sorted by title, author and rating.
 
