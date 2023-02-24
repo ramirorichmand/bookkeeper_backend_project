@@ -65,7 +65,7 @@ Each model - User, Book and OwnedBook - have REST controllers that provide basic
   - All attributes, changed or not, must be included in the request body in Postman.
 
 - DELETE:
-  - `DELETE http://localhost:8080/books/{bookId}` updates book with unique id = {id}. 
+  - `DELETE http://localhost:8080/books/{bookId}` deletes book with unique id = {id}. 
   - This must be done in Postman. If delete request is successful, Http status 202 - no content - is returned.
   
 ### Filters and Sort (Update later)
