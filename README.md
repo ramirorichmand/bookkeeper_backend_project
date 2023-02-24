@@ -20,7 +20,7 @@ OwnedBook contains the status, user and book.
 ### Class Diagram 
 The class diagram shows the relationships and attributes of each model. It can be found in the "Backend Class Diagram.png" file.
 
-<img src ="./UML Diagram Backend Final.png" alt="class diagram" width="90%"/>
+<img src ="./UML Diagram Backend Final.png" alt="class diagram" width="80%"/>
 
 
 ### Entity Relationship Diagram  
@@ -28,7 +28,7 @@ The entity relationship diagram shows the relationship between each model in the
 
 
 
-<img src="./Entity Relationship Diagram Backend Final.png" alt="entity relationship diagram" width="90%"/>
+<img src="./Entity Relationship Diagram Backend Final.png" alt="entity relationship diagram" width="80%"/>
 
 ---------
 
