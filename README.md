@@ -51,7 +51,8 @@ The technologies used for this project are:
 
 https://user-images.githubusercontent.com/122550071/221407621-98c10dc5-bfdd-463c-8b30-54da9016bbf9.mp4
 
-Please also refer to the above video when using Postman
+
+*Please also refer to the above video when using Postman*
 
 ### RESTful route endpoints
 
