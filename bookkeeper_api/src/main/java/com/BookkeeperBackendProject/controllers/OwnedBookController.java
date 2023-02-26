@@ -24,8 +24,8 @@ public class OwnedBookController {
 //    }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<OwnedBook> getStatusById(@PathVariable Long id){
-        OwnedBook ownedBook = ownedBookService.getStatusById(id);
+    public ResponseEntity<OwnedBook> getOwnedBookById(@PathVariable Long id){
+        OwnedBook ownedBook = ownedBookService.getOwnedBookById(id);
         if (ownedBook != null) {
             return new ResponseEntity<>(ownedBook, HttpStatus.OK);
         } else {
@@ -33,11 +33,11 @@ public class OwnedBookController {
         }
     }
 
-    //create owned book - method
+    //create status method?
 
     @PostMapping
-    public ResponseEntity<OwnedBook> createStatus(@RequestBody OwnedBook ownedBook){
-        ownedBook = ownedBookService.addStatus(ownedBook);
+    public ResponseEntity<OwnedBook> createOwnedBook(@RequestBody OwnedBook ownedBook){
+        ownedBook = ownedBookService.addOwnedBook(ownedBook);
         if (ownedBook != null) {
             return new ResponseEntity<>(ownedBook, HttpStatus.CREATED);
         } else {
@@ -46,8 +46,8 @@ public class OwnedBookController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<OwnedBook> updateStatus(@PathVariable Long id, @RequestBody OwnedBook ownedBook){
-        ownedBook = ownedBookService.updateStatus(id, ownedBook);
+    public ResponseEntity<OwnedBook> updateOwnedBook(@PathVariable Long id, @RequestBody OwnedBook ownedBook){
+        ownedBook = ownedBookService.updateOwnedBook(id, ownedBook);
         if (ownedBook != null) {
             return new ResponseEntity<>(ownedBook, HttpStatus.OK);
         } else {
@@ -71,8 +71,8 @@ public class OwnedBookController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStatus(@PathVariable Long id){
-        boolean isDeleted = ownedBookService.deleteStatus(id);
+    public ResponseEntity<Void> deleteOwnedBook(@PathVariable Long id){
+        boolean isDeleted = ownedBookService.deleteOwnedBook(id);
         if (isDeleted) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {

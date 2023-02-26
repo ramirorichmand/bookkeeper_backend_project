@@ -17,16 +17,16 @@ public class OwnedBookService {
 
     // The getStatusById() method retrieves a single status by its ID using the findById() method of the StatusRepository.
 
-    public OwnedBook getStatusById(Long id){
+    public OwnedBook getOwnedBookById(Long id){
         return ownedBookRepository.findById(id).orElse(null);
     }
 
-    public OwnedBook addStatus(OwnedBook ownedBook){
+    public OwnedBook addOwnedBook(OwnedBook ownedBook){
         return ownedBookRepository.save(ownedBook);
     }
 
-    public OwnedBook updateStatus(Long id, OwnedBook ownedBook){
-        OwnedBook existingOwnedBook = getStatusById(id);
+    public OwnedBook updateOwnedBook(Long id, OwnedBook ownedBook){
+        OwnedBook existingOwnedBook = getOwnedBookById(id);
         if (existingOwnedBook != null) {
             existingOwnedBook.setStatus(ownedBook.getStatus());
             existingOwnedBook.setBook(ownedBook.getBook());
@@ -38,7 +38,7 @@ public class OwnedBookService {
     }
 
     public OwnedBook updateReview(ReviewInputDTO reviewInputDTO, OwnedBook ownedBook) throws Exception {
-        OwnedBook existingOwnedBook = getStatusById(ownedBook.getId());
+        OwnedBook existingOwnedBook = getOwnedBookById(ownedBook.getId());
         if (existingOwnedBook.getStatus() == StatusEnum.READ){
             existingOwnedBook.setReview(reviewInputDTO.getReview());
             existingOwnedBook.setRating(reviewInputDTO.getRating());
@@ -48,8 +48,8 @@ public class OwnedBookService {
         }
     }
 
-    public boolean deleteStatus(Long id){
-        OwnedBook existingOwnedBook = getStatusById(id);
+    public boolean deleteOwnedBook(Long id){
+        OwnedBook existingOwnedBook = getOwnedBookById(id);
         if (existingOwnedBook != null) {
             ownedBookRepository.delete(existingOwnedBook);
             return true;
