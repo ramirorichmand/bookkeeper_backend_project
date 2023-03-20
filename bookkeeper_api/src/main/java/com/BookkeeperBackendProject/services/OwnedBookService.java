@@ -17,6 +17,8 @@ public class OwnedBookService {
 
     // The getStatusById() method retrieves a single status by its ID using the findById() method of the StatusRepository.
 
+    public List<OwnedBook> getAllOwnedBooks() {return ownedBookRepository.findAll();}
+
     public OwnedBook getOwnedBookById(Long id){
         return ownedBookRepository.findById(id).orElse(null);
     }
