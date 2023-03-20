@@ -1,5 +1,11 @@
 # Bookkeeper Backend Project
 
+
+
+
+https://user-images.githubusercontent.com/122550071/221407564-c6b525e7-f90a-4b7f-b256-7d7482aee7fd.mp4
+
+
 ## Description
 
 This project is a Bookkeeper API containing books within a 'booklist.' Each book contains the title, author, description and genre.
@@ -40,6 +46,12 @@ The technologies used for this project are:
 -------------
 
 ## How to use the API 
+
+
+
+https://user-images.githubusercontent.com/122550071/221407621-98c10dc5-bfdd-463c-8b30-54da9016bbf9.mp4
+
+Please also refer to the above video when using Postman
 
 ### RESTful route endpoints
 
