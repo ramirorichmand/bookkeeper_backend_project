@@ -18,10 +18,15 @@ public class OwnedBookController {
     private OwnedBookService ownedBookService;
 
     //get all owned books - method
-//    @GetMapping(value = "ownedBooks")
-//    public ResponseEntity<OwnedBook> getAllOwnedBooks(){
-//        OwnedBook ownedBook = ownedBookService.g
-//    }
+    @GetMapping(value = "ownedBooks")
+    public ResponseEntity<List<OwnedBook>> getAllOwnedBooks(){
+        List <OwnedBook> ownedBooks = ownedBookService.getAllOwnedBooks();
+        if (!ownedBooks.isEmpty()){
+            return new ResponseEntity<>(ownedBooks, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<OwnedBook> getOwnedBookById(@PathVariable Long id){
@@ -76,7 +81,7 @@ public class OwnedBookController {
         if (isDeleted) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }
